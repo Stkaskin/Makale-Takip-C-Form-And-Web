@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "yenipersonel";
+    Layout = "~/Views/Layout/Layout.cshtml";
+}
+
+<h2>yenipersonel</h2>
+
+<form method="post">
+    <div class="form-group">
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Ad*</label>
+            <input type="text" name="ad" class="form-control" required id="exampleFormControlInput1" placeholder="Ad " >
+        </div>
+    
+              <div class="form-group">
+            <label for="exampleFormControlInput1">Soyad*</label>
+            <input type="text" name="soyad" class="form-control" required id="exampleFormControlInput1" placeholder="Soyad" >
+     
+            <label for="exampleFormControlInput1">Telefon</label>
+            <input type="tel" class="form-control" id="exampleFormControlInput1" placeholder="Telefon" name="tel"  >
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Mail*</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="mail@ornek.com"  name="mail"  required>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Adres</label>
+            <textarea class="form-control" id="exampleFormControlInput1" placeholder="Adres" rows="3" style="resize:none;" name="adres"  ></textarea>
+        </div>
+        <select class="custom-select" size="5" required name="sayi">
+           
+            @*<option value="1">Alan Editörü</option>*@
+            <option selected value="1">Yazar</option>
+            <option value="2">Hakem</option>
+            @*<option value="3">Diğer Yazar.</option>*@
+        </select>
+        @*<div class="form-group">
+            <label for="exampleFormControlSelect1">Example select</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>*@
+        <input type="submit"   class="btn btn-outline-success btn-lg"  name="name" value="Ekle" />
+    </div>
+    
+</form>

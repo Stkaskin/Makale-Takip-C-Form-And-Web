@@ -1,0 +1,134 @@
+﻿@model List<WebProject.Models.Makaleİslem>
+@{
+    ViewBag.Title = "detay";
+    Layout = "~/Views/Layout/Layout.cshtml";
+}
+<style style="">
+</style>
+<h2>detay</h2>
+<div class="bd-example">
+    <form action="/page/detay" method="post">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Email</span>
+            </div>
+            <input type="email" class="form-control" name="mail" />
+
+        </div><br />
+        <div class="form-check">
+            <input class="form-check-input " type="radio" name="tip" id="exampleRadios1" value="0" checked="">
+            <label class="form-check-label " for="exampleRadios1">
+                Yazar
+            </label>
+        </div><br />
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="tip" id="exampleRadios2" value="1">
+            <label class="form-check-label" for="exampleRadios2">
+                Diğer Yazar
+            </label>
+        </div>
+        <br />
+        <div class="input-group">
+
+            <input type="submit" class="btn-dark btn btn-lg" value="Makale durum sorgula" />
+        </div>
+    </form> 
+</div>
+<br />
+<hr />
+<br />
+
+
+
+<div class="table-responsive">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Yazar</th>
+                <th scope="col">Editör Tarih</th>
+                <th scope="col">Alan Editör Tarih</th>
+                <th scope="col">Hakem Tarih</th>
+                <th scope="col">Durum</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model!=null && ViewBag.makale!=null) {
+                foreach (var item in Model)
+                {
+                    foreach (var m in ViewBag.makale)
+                    {
+
+                 
+                        if (item.makaleid==m.id) {
+
+
+            <tr>
+                <td>
+                    @m.id
+                </td>
+
+                <td>
+                    @item.yazarid
+                </td>
+
+                <td>
+                    @item.baseditörislem
+                </td>
+
+                <td>
+                    @item.alaneditörislem
+
+                </td>
+
+                <td>
+                    @item.hakemid1islem
+                </td>
+               
+                    
+                    @if (m.onay == 0)
+                    {
+                    <td>Alan Editörü Ataması Bekleniyor</td>
+                }
+                else if (m.onay == 1)
+                {
+                    <td>Hakem Ataması Bekleniyor </td>
+                }
+                else if (m.onay == 2)
+                {
+                    <td>Hakem Onayı Bekleniyor </td>
+                }
+                else if (m.onay == 3)
+                {
+                    <td>Heyet Onayladı</td>
+                }
+                else if (m.onay == 4)
+                {
+                    <td>Son Değerlendirmede</td>
+                }
+                else if (m.onay == 5)
+                {
+                    <td>Revizon İstendi</td>
+
+                }
+               
+                else if (m.onay == 7)
+                {
+                    <td>Red Edildi</td>
+                }
+                else if (m.onay == 8)
+                {
+                    <td>Onaylandı</td>
+                }
+
+                   
+                </tr>
+                        }
+                    }
+                }
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MakaleModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="MakaleEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Editör" EntityType="MakaleModel.Editör" />
+    <EntitySet Name="Hakem" EntityType="MakaleModel.Hakem" />
+    <EntitySet Name="Makale" EntityType="MakaleModel.Makale" />
+    <EntitySet Name="Makaleİslem" EntityType="MakaleModel.Makaleİslem" />
+    <EntitySet Name="Revizyon" EntityType="MakaleModel.Revizyon" />
+    <EntitySet Name="sysdiagrams" EntityType="MakaleModel.sysdiagrams" />
+    <EntitySet Name="Yazar" EntityType="MakaleModel.Yazar" />
+  </EntityContainer>
+  <EntityType Name="Editör">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="yetki" Type="Int16" />
+    <Property Name="aktif" Type="Int16" />
+    <Property Name="yasaklama" Type="Int16" />
+    <Property Name="sonislem" Type="DateTime" Precision="3" />
+    <Property Name="parola" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="kayit" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Hakem">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="alan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="aktif" Type="Int16" />
+    <Property Name="yasaklama" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sonislem" Type="DateTime" Precision="3" />
+    <Property Name="parola" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tarih" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Makale">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="baslik" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="metin" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="kategori" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="zaman" Type="DateTime" Precision="3" />
+    <Property Name="yazar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="revizyon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="revizyonzaman" Type="DateTime" Precision="0" />
+    <Property Name="yol" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="onay" Type="Int32" />
+    <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="kurum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Makaleİslem">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="makaleid" Type="Int32" />
+    <Property Name="baseditörid" Type="Int32" />
+    <Property Name="baseditörislem" Type="DateTime" Precision="3" />
+    <Property Name="alaneditorrapor" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="baseditorcevap" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="alaneditörid" Type="Int32" />
+    <Property Name="alaneditörislem" Type="DateTime" Precision="3" />
+    <Property Name="alaneditorcevap" Type="Int32" />
+    <Property Name="yazarid" Type="Int32" />
+    <Property Name="yazarislem" Type="DateTime" Precision="3" />
+    <Property Name="hakemid1islem" Type="DateTime" Precision="3" />
+    <Property Name="hakemid2islem" Type="DateTime" Precision="3" />
+    <Property Name="hakemid3islem" Type="DateTime" Precision="3" />
+    <Property Name="hakemid1" Type="Int32" />
+    <Property Name="hakemid2" Type="Int32" />
+    <Property Name="hakemid3" Type="Int32" />
+    <Property Name="hakem1cevap" Type="Int32" />
+    <Property Name="hakem2cevap" Type="Int32" />
+    <Property Name="hakem3cevap" Type="Int32" />
+    <Property Name="hakem1rapor" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="hakem2rapor" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="hakem3rapor" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="hakem1puan" Type="Int32" />
+    <Property Name="hakem2puan" Type="Int32" />
+    <Property Name="hakem3puan" Type="Int32" />
+    <Property Name="hakem1pdf" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="hakem2pdf" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="hakem3pdf" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Revizyon">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="makaleid" Type="Int32" />
+    <Property Name="yazarid" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="rprhkm1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="rprhkm2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="rprhkm3" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="pdfhkm1" Type="String" MaxLength="75" FixedLength="false" Unicode="true" />
+    <Property Name="pdfhkm2" Type="String" MaxLength="75" FixedLength="false" Unicode="true" />
+    <Property Name="pdfhkm3" Type="String" MaxLength="75" FixedLength="false" Unicode="true" />
+    <Property Name="puanhkm1" Type="Int32" />
+    <Property Name="puanhkm2" Type="Int32" />
+    <Property Name="puanhkm3" Type="Int32" />
+    <Property Name="hakemid1" Type="Int32" />
+    <Property Name="hakemid2" Type="Int32" />
+    <Property Name="hakemid3" Type="Int32" />
+    <Property Name="alaneditorid" Type="Int32" />
+    <Property Name="baseditorid" Type="Int32" />
+    <Property Name="yazarpdf" Type="String" MaxLength="75" FixedLength="false" Unicode="true" />
+    <Property Name="revizyontalep" Type="DateTime" Precision="3" />
+    <Property Name="revizyongonderim" Type="DateTime" Precision="3" />
+    <Property Name="zaman" Type="DateTime" Precision="3" />
+    <Property Name="aktif" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Yazar">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sonislem" Type="Int32" />
+    <Property Name="aktif" Type="Int32" />
+    <Property Name="tur" Type="Int32" />
+    <Property Name="yasaklama" Type="Int32" />
+    <Property Name="parola" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="kayit" Type="DateTime" Precision="3" />
+  </EntityType>
+</Schema>

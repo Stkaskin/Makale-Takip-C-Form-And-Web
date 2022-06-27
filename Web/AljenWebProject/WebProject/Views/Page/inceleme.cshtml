@@ -1,0 +1,91 @@
+﻿@model WebProject.Models.Makaleİslem
+@{
+    ViewBag.Title = "inceleme";
+    Layout = "~/Views/Layout/Layout.cshtml";
+}
+
+<h2>inceleme</h2>
+
+<form method="post" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-11">
+            <div class="input-group">
+                <div class="input-group-prepend">
+
+                </div>
+                <a class="btn btn-info btn-group-lg" href="@ViewBag.yol" target="_blank">Pdf'e Git</a>
+            </div>
+            <br /><hr />
+            <div class="input-group">
+                <div class="input-group-prepend">
+
+                </div>
+                <a class="btn btn-info btn-group-lg" href="@Model.hakem1pdf" target="_blank">Hakem 1 Rapor Pdf'ine Git</a>
+            </div>
+            <div class="input-group">
+                <div class="input-group-prepend">
+
+                </div>
+                <label>Hakem 1 rapor :@Model.hakem1rapor</label>
+            </div>
+            <br /><hr />
+            <div class="input-group">
+                <div class="input-group-prepend">
+
+                </div>
+                <a class="btn btn-info btn-group-lg" href="@Model.hakem2pdf" target="_blank">Hakem 2 Rapor Pdf'ine Git</a>
+            </div>    <div class="input-group">
+                <div class="input-group-prepend">
+
+                </div>
+                <label>Hakem 2 rapor :@Model.hakem2rapor</label>
+            </div>
+            <br /><hr />
+            <div class="input-group">
+                <div class="input-group-prepend">
+
+                </div>    <div class="input-group">
+                    <div class="input-group-prepend">
+
+                    </div>
+                    <label>Hakem 3 rapor :@Model.hakem3rapor</label>
+                </div>
+                <a class="btn btn-info btn-group-lg" href="@Model.hakem3pdf" target="_blank">Hakem 3 Rapor Pdf'ine Git</a>
+            </div>
+            <br />
+
+            <br />
+
+
+
+
+            <div>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Rapor Metniniz</span>
+                    </div>
+                    <textarea class="form-control" style="resize:none;" name="metin" id="metin" rows="10"></textarea>
+                </div>
+            </div>
+            <br />
+        </div>  <div class=" col-7" style=" text-align-last: center;">
+
+    @{if (ViewBag.cevap == 3)
+        {
+            <button type="submit" class="btn btn-success btn-lg" formaction="~/Page/incelemetercih/@Model.makaleid?tercih=0">ONAY Cevabı Gönder</button>
+        }
+        else if (ViewBag.cevap==4 || ViewBag.cevap==5)
+        {
+            <button type="submit" class="btn btn-danger btn-lg" formaction="~/Page/incelemetercih/@Model.makaleid?tercih=0">RET Cevabı Gönder</button>
+            <button type="submit" class="btn btn-warning btn-lg" formaction="~/Page/incelemetercih/@Model.makaleid?tercih=1">Revizyon Talebi</button>}
+    }
+
+
+
+
+
+
+</div>
+
+    </div>
+</form>

@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MakaleModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Editör">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="soyad" Type="nvarchar" MaxLength="50" />
+    <Property Name="ad" Type="nvarchar" MaxLength="50" />
+    <Property Name="mail" Type="nvarchar" MaxLength="50" />
+    <Property Name="tel" Type="nvarchar" MaxLength="50" />
+    <Property Name="yetki" Type="smallint" />
+    <Property Name="aktif" Type="smallint" />
+    <Property Name="yasaklama" Type="smallint" />
+    <Property Name="sonislem" Type="datetime" />
+    <Property Name="parola" Type="nvarchar" MaxLength="50" />
+    <Property Name="kayit" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Hakem">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ad" Type="nvarchar" MaxLength="50" />
+    <Property Name="soyad" Type="nvarchar" MaxLength="50" />
+    <Property Name="alan" Type="nvarchar" MaxLength="50" />
+    <Property Name="aktif" Type="smallint" />
+    <Property Name="yasaklama" Type="nvarchar" MaxLength="50" />
+    <Property Name="sonislem" Type="datetime" />
+    <Property Name="parola" Type="nvarchar" MaxLength="50" />
+    <Property Name="mail" Type="nvarchar" MaxLength="50" />
+    <Property Name="tarih" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Makale">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="baslik" Type="nvarchar" MaxLength="50" />
+    <Property Name="metin" Type="nvarchar" MaxLength="500" />
+    <Property Name="kategori" Type="nvarchar" MaxLength="50" />
+    <Property Name="zaman" Type="datetime" />
+    <Property Name="yazar" Type="nvarchar" MaxLength="50" />
+    <Property Name="revizyon" Type="nvarchar" MaxLength="50" />
+    <Property Name="revizyonzaman" Type="date" />
+    <Property Name="yol" Type="nvarchar" MaxLength="50" />
+    <Property Name="onay" Type="int" />
+    <Property Name="ad" Type="nvarchar" MaxLength="50" />
+    <Property Name="soyad" Type="nvarchar" MaxLength="50" />
+    <Property Name="mail" Type="nvarchar" MaxLength="50" />
+    <Property Name="kurum" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Makaleİslem">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="makaleid" Type="int" />
+    <Property Name="baseditörid" Type="int" />
+    <Property Name="baseditörislem" Type="datetime" />
+    <Property Name="alaneditorrapor" Type="nvarchar" MaxLength="250" />
+    <Property Name="baseditorcevap" Type="nvarchar" MaxLength="250" />
+    <Property Name="alaneditörid" Type="int" />
+    <Property Name="alaneditörislem" Type="datetime" />
+    <Property Name="alaneditorcevap" Type="int" />
+    <Property Name="yazarid" Type="int" />
+    <Property Name="yazarislem" Type="datetime" />
+    <Property Name="hakemid1islem" Type="datetime" />
+    <Property Name="hakemid2islem" Type="datetime" />
+    <Property Name="hakemid3islem" Type="datetime" />
+    <Property Name="hakemid1" Type="int" />
+    <Property Name="hakemid2" Type="int" />
+    <Property Name="hakemid3" Type="int" />
+    <Property Name="hakem1cevap" Type="int" />
+    <Property Name="hakem2cevap" Type="int" />
+    <Property Name="hakem3cevap" Type="int" />
+    <Property Name="hakem1rapor" Type="nvarchar" MaxLength="250" />
+    <Property Name="hakem2rapor" Type="nvarchar" MaxLength="250" />
+    <Property Name="hakem3rapor" Type="nvarchar" MaxLength="250" />
+    <Property Name="hakem1puan" Type="int" />
+    <Property Name="hakem2puan" Type="int" />
+    <Property Name="hakem3puan" Type="int" />
+    <Property Name="hakem1pdf" Type="nvarchar" MaxLength="50" />
+    <Property Name="hakem2pdf" Type="nvarchar" MaxLength="50" />
+    <Property Name="hakem3pdf" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Revizyon">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="makaleid" Type="int" />
+    <Property Name="yazarid" Type="nchar" MaxLength="10" />
+    <Property Name="rprhkm1" Type="nvarchar" MaxLength="250" />
+    <Property Name="rprhkm2" Type="nvarchar" MaxLength="250" />
+    <Property Name="rprhkm3" Type="nvarchar" MaxLength="250" />
+    <Property Name="pdfhkm1" Type="nvarchar" MaxLength="75" />
+    <Property Name="pdfhkm2" Type="nvarchar" MaxLength="75" />
+    <Property Name="pdfhkm3" Type="nvarchar" MaxLength="75" />
+    <Property Name="puanhkm1" Type="int" />
+    <Property Name="puanhkm2" Type="int" />
+    <Property Name="puanhkm3" Type="int" />
+    <Property Name="hakemid1" Type="int" />
+    <Property Name="hakemid2" Type="int" />
+    <Property Name="hakemid3" Type="int" />
+    <Property Name="alaneditorid" Type="int" />
+    <Property Name="baseditorid" Type="int" />
+    <Property Name="yazarpdf" Type="nvarchar" MaxLength="75" />
+    <Property Name="revizyontalep" Type="datetime" />
+    <Property Name="revizyongonderim" Type="datetime" />
+    <Property Name="zaman" Type="datetime" />
+    <Property Name="aktif" Type="bit" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Yazar">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ad" Type="nvarchar" MaxLength="50" />
+    <Property Name="soyad" Type="nvarchar" MaxLength="50" />
+    <Property Name="mail" Type="nvarchar" MaxLength="50" />
+    <Property Name="tel" Type="nvarchar" MaxLength="50" />
+    <Property Name="sonislem" Type="int" />
+    <Property Name="aktif" Type="int" />
+    <Property Name="tur" Type="int" />
+    <Property Name="yasaklama" Type="int" />
+    <Property Name="parola" Type="nvarchar" MaxLength="50" />
+    <Property Name="kayit" Type="datetime" />
+  </EntityType>
+  <EntityContainer Name="MakaleModelStoreContainer">
+    <EntitySet Name="Editör" EntityType="Self.Editör" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hakem" EntityType="Self.Hakem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Makale" EntityType="Self.Makale" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Makaleİslem" EntityType="Self.Makaleİslem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Revizyon" EntityType="Self.Revizyon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Yazar" EntityType="Self.Yazar" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

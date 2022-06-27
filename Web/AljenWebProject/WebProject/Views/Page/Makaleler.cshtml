@@ -1,0 +1,140 @@
+﻿@model List<WebProject.Models.Makale>
+@{
+    ViewBag.Title = "Makaleler";
+    Layout = "~/Views/Layout/Layout.cshtml";
+    string[] bilgi = new string[2];
+
+    bilgi = (string[])Session["user"];
+    if (bilgi == null)
+    {
+        Response.Redirect("~/Page/Login");
+    }
+
+    <hr />
+}
+@if (bilgi != null && bilgi[1] == "1")
+{
+
+    <h1 style="text-align:center;">Yazar</h1>
+
+    <a class=" btn btn-info" href="/Page/newmakale">Yeni Makale</a>
+
+
+
+}
+else if (bilgi != null && bilgi[1] == "2")
+{
+    <h1 style="text-align:center;">Alan Editörü</h1>
+    <a class=" btn btn-info" href="/Page/yenipersonel">Yeni Personel Ekle</a>
+}
+else if (bilgi != null && bilgi[1] == "3")
+{
+    <h1 style="text-align:center;">Hakem</h1>
+}
+<h2>Makaleler</h2>
+<div>
+    <a href="?onaytipi=" class="btn btn-outline-success">Tümü</a>
+    <a href="?onaytipi=0" class="btn btn-outline-success">Editör B.</a>
+
+    <a href="?onaytipi=1" class="btn btn-outline-warning">Alan Editör B.</a>
+    <a href="?onaytipi=2" class="btn btn-outline-info">Hakem B.</a>
+    <a href="?onaytipi=5" class="btn btn-outline-primary">Revizyon B.</a>
+
+
+
+</div>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Yazar</th>
+                <th scope="col">Yazım Tarihi</th>
+                <th scope="col">Konu</th>
+                <th scope="col">Onay</th>
+                <th scope="col">#</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+
+
+                <tr>
+                    <th scope="row">@item.id</th>
+                    <td>@item.yazar</td>
+                    <td style=" -webkit-text-stroke-width: thick;">@item.zaman.Value </td>
+                    <td>@item.baslik</td>
+                    @if (item.onay == 0)
+                    {
+                        <td>Alan Editörü Ataması Bekleniyor</td>
+                    }
+                    else if (item.onay == 1)
+                    {
+                        <td>Hakem Ataması Bekleniyor </td>
+                    }
+                    else if (item.onay == 2)
+                    {
+                        <td>Hakem Onayı Bekleniyor </td>
+                    }
+                    else if (item.onay == 3)
+                    {
+                        <td>Heyet Onayladı</td>
+                    }
+                    else if (item.onay == 4)
+                    {
+                        <td>Son Değerlendirmede</td>
+                    }
+                    else if (item.onay == 5)
+                    {
+                        <td>Revizon İstendi</td>
+
+                    }
+                    else if (item.onay == 6)
+                    {
+                        <td>Oy Verdiniz</td>
+                    }
+                    else if (item.onay == 7)
+                    {
+                        <td>Red Edildi</td>
+                    }
+                    else if (item.onay == 8)
+                    {
+                        <td>Onaylandı</td>
+                    }
+
+
+
+
+                    <td>
+                        @if (bilgi[1] == "2")
+                        {
+                            if (item.onay == 1)
+                            {<a class="btn btn-outline-success" href="~/Page/atama/@item.id">Atama</a>}
+                            else if (item.onay == 3 || item.onay == 4)
+                            {<a class="btn btn-outline-success" href="~/Page/inceleme/@item.id">İncele</a>
+                            }
+
+
+                        }
+                        else if (bilgi[1] == "3" && item.onay == 2)
+                        {
+                            <a class="btn btn-outline-success" href="~/Page/Makaleİncele/@item.id">İncele</a>
+                        }
+                        else if (bilgi[1] == "1" && item.onay == 5)
+                        {
+                            <a class="btn btn-warning" href="~/Page/revizyon/@item.id">Revizyon Yap</a>
+                        }
+
+
+
+
+
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+

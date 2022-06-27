@@ -1,0 +1,53 @@
+﻿@model WebProject.Models.Makale
+@{
+    ViewBag.Title = "revizyon";
+    Layout = "~/Views/Layout/Layout.cshtml";
+}
+
+<br />
+<h1><span class="badge badge-secondary">Revizyon </span></h1>
+<hr />
+<br />
+
+<form action="~/Page/revizyononay/@Model.id" method="post" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-12 col-md-8">
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Başlık</label>
+                
+            </div>
+            <div class="form-group">
+                
+                <a class="btn btn-primary" href="@Model.yol">Revizyonsuz haline git</a>
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="exampleFormControlFile1">Pdf Seçiniz</label>
+
+                <input type="file" class="form-control-file" accept="application/pdf" name="file" id="exampleFormControlFile1">
+            </div>
+
+
+        </div>
+        <div class="col-6 col-md-4">
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Kategori:</label>
+                <label>@Model.baslik</label>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Gönderim Tarihi:</label>
+                <label>@Model.zaman</label>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Revizyon:</label>
+                <<label>@Model.revizyonzaman</label>
+            </div>
+
+            <input type="submit" value="Gönder" class="btn btn-success btn-sm btn-block" />
+
+
+
+        </div>
+    </div>
+</form>
+

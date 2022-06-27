@@ -1,0 +1,55 @@
+﻿@model List<WebProject.Models.Makale>
+@{
+    ViewBag.Title = "davetler";
+    Layout = "~/Views/Layout/Layout.cshtml";
+    List<WebProject.Controllers.PageController.gunsay> gunsay = ViewBag.gunsay;
+
+}
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Yazar *ID</th>
+                <th scope="col">KONU</th>
+                <th scope="col">Yazıldı</th>
+                <th scope="col">Süre</th>
+                <th scope="col">#</th>
+ 
+            </tr>
+        </thead>
+        <tbody>
+           
+
+            @foreach (var item in Model)
+            {
+
+
+            <tr>
+                <th scope="row">@item.id</th>
+                <td>
+                    @item.yazar
+                </td>
+                <td>
+                    @item.baslik
+                </td>
+                <td>
+                    @item.zaman
+                </td>
+                <td>@gunsay.Where(x => x.id == item.id).FirstOrDefault().gun.ToString() Gün
+
+             
+                </td>
+                <td>
+                    <a class="btn btn-outline-success" href="~/Page/davetsecim/?id=@item.id&cevap=1">Onayla</a>  <a class="btn btn-outline-danger" href="~/Page/davetsecim/?id=@item.id&cevap=2">Red Et</a>
+                </td>
+
+
+            </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+

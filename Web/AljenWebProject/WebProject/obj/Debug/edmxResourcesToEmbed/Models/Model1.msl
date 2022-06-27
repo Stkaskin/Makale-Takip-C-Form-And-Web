@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MakaleModelStoreContainer" CdmEntityContainer="MakaleEntities">
+    <EntitySetMapping Name="Editör">
+      <EntityTypeMapping TypeName="MakaleModel.Editör">
+        <MappingFragment StoreEntitySet="Editör">
+          <ScalarProperty Name="kayit" ColumnName="kayit" />
+          <ScalarProperty Name="parola" ColumnName="parola" />
+          <ScalarProperty Name="sonislem" ColumnName="sonislem" />
+          <ScalarProperty Name="yasaklama" ColumnName="yasaklama" />
+          <ScalarProperty Name="aktif" ColumnName="aktif" />
+          <ScalarProperty Name="yetki" ColumnName="yetki" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="soyad" ColumnName="soyad" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hakem">
+      <EntityTypeMapping TypeName="MakaleModel.Hakem">
+        <MappingFragment StoreEntitySet="Hakem">
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="parola" ColumnName="parola" />
+          <ScalarProperty Name="sonislem" ColumnName="sonislem" />
+          <ScalarProperty Name="yasaklama" ColumnName="yasaklama" />
+          <ScalarProperty Name="aktif" ColumnName="aktif" />
+          <ScalarProperty Name="alan" ColumnName="alan" />
+          <ScalarProperty Name="soyad" ColumnName="soyad" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Makale">
+      <EntityTypeMapping TypeName="MakaleModel.Makale">
+        <MappingFragment StoreEntitySet="Makale">
+          <ScalarProperty Name="kurum" ColumnName="kurum" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="soyad" ColumnName="soyad" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="onay" ColumnName="onay" />
+          <ScalarProperty Name="yol" ColumnName="yol" />
+          <ScalarProperty Name="revizyonzaman" ColumnName="revizyonzaman" />
+          <ScalarProperty Name="revizyon" ColumnName="revizyon" />
+          <ScalarProperty Name="yazar" ColumnName="yazar" />
+          <ScalarProperty Name="zaman" ColumnName="zaman" />
+          <ScalarProperty Name="kategori" ColumnName="kategori" />
+          <ScalarProperty Name="metin" ColumnName="metin" />
+          <ScalarProperty Name="baslik" ColumnName="baslik" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Makaleİslem">
+      <EntityTypeMapping TypeName="MakaleModel.Makaleİslem">
+        <MappingFragment StoreEntitySet="Makaleİslem">
+          <ScalarProperty Name="hakem3pdf" ColumnName="hakem3pdf" />
+          <ScalarProperty Name="hakem2pdf" ColumnName="hakem2pdf" />
+          <ScalarProperty Name="hakem1pdf" ColumnName="hakem1pdf" />
+          <ScalarProperty Name="hakem3puan" ColumnName="hakem3puan" />
+          <ScalarProperty Name="hakem2puan" ColumnName="hakem2puan" />
+          <ScalarProperty Name="hakem1puan" ColumnName="hakem1puan" />
+          <ScalarProperty Name="hakem3rapor" ColumnName="hakem3rapor" />
+          <ScalarProperty Name="hakem2rapor" ColumnName="hakem2rapor" />
+          <ScalarProperty Name="hakem1rapor" ColumnName="hakem1rapor" />
+          <ScalarProperty Name="hakem3cevap" ColumnName="hakem3cevap" />
+          <ScalarProperty Name="hakem2cevap" ColumnName="hakem2cevap" />
+          <ScalarProperty Name="hakem1cevap" ColumnName="hakem1cevap" />
+          <ScalarProperty Name="hakemid3" ColumnName="hakemid3" />
+          <ScalarProperty Name="hakemid2" ColumnName="hakemid2" />
+          <ScalarProperty Name="hakemid1" ColumnName="hakemid1" />
+          <ScalarProperty Name="hakemid3islem" ColumnName="hakemid3islem" />
+          <ScalarProperty Name="hakemid2islem" ColumnName="hakemid2islem" />
+          <ScalarProperty Name="hakemid1islem" ColumnName="hakemid1islem" />
+          <ScalarProperty Name="yazarislem" ColumnName="yazarislem" />
+          <ScalarProperty Name="yazarid" ColumnName="yazarid" />
+          <ScalarProperty Name="alaneditorcevap" ColumnName="alaneditorcevap" />
+          <ScalarProperty Name="alaneditörislem" ColumnName="alaneditörislem" />
+          <ScalarProperty Name="alaneditörid" ColumnName="alaneditörid" />
+          <ScalarProperty Name="baseditorcevap" ColumnName="baseditorcevap" />
+          <ScalarProperty Name="alaneditorrapor" ColumnName="alaneditorrapor" />
+          <ScalarProperty Name="baseditörislem" ColumnName="baseditörislem" />
+          <ScalarProperty Name="baseditörid" ColumnName="baseditörid" />
+          <ScalarProperty Name="makaleid" ColumnName="makaleid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Revizyon">
+      <EntityTypeMapping TypeName="MakaleModel.Revizyon">
+        <MappingFragment StoreEntitySet="Revizyon">
+          <ScalarProperty Name="aktif" ColumnName="aktif" />
+          <ScalarProperty Name="zaman" ColumnName="zaman" />
+          <ScalarProperty Name="revizyongonderim" ColumnName="revizyongonderim" />
+          <ScalarProperty Name="revizyontalep" ColumnName="revizyontalep" />
+          <ScalarProperty Name="yazarpdf" ColumnName="yazarpdf" />
+          <ScalarProperty Name="baseditorid" ColumnName="baseditorid" />
+          <ScalarProperty Name="alaneditorid" ColumnName="alaneditorid" />
+          <ScalarProperty Name="hakemid3" ColumnName="hakemid3" />
+          <ScalarProperty Name="hakemid2" ColumnName="hakemid2" />
+          <ScalarProperty Name="hakemid1" ColumnName="hakemid1" />
+          <ScalarProperty Name="puanhkm3" ColumnName="puanhkm3" />
+          <ScalarProperty Name="puanhkm2" ColumnName="puanhkm2" />
+          <ScalarProperty Name="puanhkm1" ColumnName="puanhkm1" />
+          <ScalarProperty Name="pdfhkm3" ColumnName="pdfhkm3" />
+          <ScalarProperty Name="pdfhkm2" ColumnName="pdfhkm2" />
+          <ScalarProperty Name="pdfhkm1" ColumnName="pdfhkm1" />
+          <ScalarProperty Name="rprhkm3" ColumnName="rprhkm3" />
+          <ScalarProperty Name="rprhkm2" ColumnName="rprhkm2" />
+          <ScalarProperty Name="rprhkm1" ColumnName="rprhkm1" />
+          <ScalarProperty Name="yazarid" ColumnName="yazarid" />
+          <ScalarProperty Name="makaleid" ColumnName="makaleid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="MakaleModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Yazar">
+      <EntityTypeMapping TypeName="MakaleModel.Yazar">
+        <MappingFragment StoreEntitySet="Yazar">
+          <ScalarProperty Name="kayit" ColumnName="kayit" />
+          <ScalarProperty Name="parola" ColumnName="parola" />
+          <ScalarProperty Name="yasaklama" ColumnName="yasaklama" />
+          <ScalarProperty Name="tur" ColumnName="tur" />
+          <ScalarProperty Name="aktif" ColumnName="aktif" />
+          <ScalarProperty Name="sonislem" ColumnName="sonislem" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="soyad" ColumnName="soyad" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

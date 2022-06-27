@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "newmakale";
+    Layout = "~/Views/Layout/Layout.cshtml";
+}
+<br />
+<h1><span class="badge badge-secondary">Yeni Makale</span></h1>
+<hr />
+<br />
+
+<form action="~/Page/newmakale" method="post" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-12 col-md-8">
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Başlık</label>
+                <input required type="text" required class="form-control" id="baslik" name="baslik" placeholder="Başlık">
+            </div>
+      
+                <div class="form-group">
+                    <label for="exampleFormControlFile1">Pdf Seçiniz</label>
+                    <input type="file" required class="form-control-file" accept="application/pdf" name ="file" id="exampleFormControlFile1">
+                </div>
+          
+
+        </div>
+        <div class="col-6 col-md-4">
+
+
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Ad</label>
+                <input  type="text" class="form-control"  id="exampleFormControlInput1" placeholder="Ad" name="ad">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Soyad</label>
+                <input  type="text" class="form-control" id="exampleFormControlInput1" placeholder="Soyad" name="soyad">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Mail</label>
+                <input  type="text" class="form-control" name="mail" id="exampleFormControlInput1" placeholder="Mail">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Kurum</label>
+                <input  type="text" class="form-control" name="kurum" id="exampleFormControlInput1" placeholder="Kurum">
+            </div>
+
+            <input type="submit" value="Gönder" class="btn btn-success btn-sm btn-block" />
+
+
+
+        </div>
+    </div>
+</form>
+

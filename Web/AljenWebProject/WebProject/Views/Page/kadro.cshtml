@@ -1,0 +1,176 @@
+﻿@model WebProject.Controllers.PageController.ListKadro
+@{
+    ViewBag.Title = "kadro";
+    Layout = "~/Views/Layout/Layout.cshtml";
+}
+
+<div class=" container">
+    <a  class="btn btn-outline-success" href="~/Page/kadro/">Hepsi</a>
+    <a class="btn btn-outline-success" href="~/Page/kadro/?tercih=4">Baş editörler</a>
+    <a class="btn btn-outline-success" href="~/Page/kadro/?tercih=2">Alan Editörü</a>
+    <a class="btn btn-outline-success"href="~/Page/kadro/?tercih=3">Hakemler</a>
+  
+    <a class="btn btn-outline-success" href="~/Page/kadro/?tercih=1">Yazarlar</a>
+
+
+</div>
+<div class=" container">
+    <table style="width:100%">
+        <tr>
+            <td width="20%">  </td>
+
+            <td width="20%">  </td>
+
+            <td width="20%">  </td>
+
+            <td width="20%"> </td>
+
+            <td width="20%"></td>
+        </tr>
+        @if (Model.editors != null)
+        {
+
+            int i = 0;
+            foreach (var item in Model.editors)
+            {
+
+                if (item.yetki == 1)
+                {
+                    if (i == 0)
+                    {
+                        i = 1;
+
+                        <tr>
+                            <td style=" text-align: center; font-size: xx-large; font-family: cursive; font-weight: bolder;" colspan="5">Editör</td>
+                        </tr>
+                    }
+
+                    <tr style="border:double">
+
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <div class="" style=" text-align: center;">
+                                <br />
+                                <hr />
+                                <label>@item.id</label><br />
+                                <label>@item.ad</label><br />
+                                <label>@item.mail</label><br />
+
+                            </div>
+                        </td>
+                    </tr>
+                }
+            }
+        }
+
+        @if (Model.editors != null)
+        {
+            int i = 0;
+
+            foreach (var item in Model.editors)
+            {
+                if (item.yetki == 2)
+                {
+                    if (i == 0)
+                    {
+                        i = 1;
+                        <tr>
+                            <td style=" height: 80px; text-align: center; font-size: xx-large; font-family: cursive; font-weight: bolder;" colspan="5">ALAN EDİTÖRÜ</td>
+                        </tr>
+                        <tr style="">
+                            <td>İD</td>
+                            <td>AD</td>
+                            <td>MAİL</td>
+                            <td>KAYİT</td>
+
+                        </tr>
+                    }
+
+
+                    <tr style="border: groove; ">
+                        <td>
+                            <div class="" style="">
+                                <br />
+
+                                <label>@item.id</label>
+
+                                <br />
+
+
+                            </div>
+                        </td>
+                        <td>  @item.ad+" "+@item.soyad</td>
+                        <td> @item.mail</td>
+                        <td>  @item.kayit</td>
+                    </tr>
+                }
+            }
+        }
+        @if (Model.hakems != null)
+        {
+            <tr>
+                <td style=" height: 80px; text-align: center; font-size: xx-large; font-family: cursive; font-weight: bolder;" colspan="5">HAKEM</td>
+            </tr>
+            <tr style="border: groove; ">
+                <td>İD</td>
+                <td>AD</td>
+                <td>MAİL</td>
+                <td>KAYİT</td>
+
+            </tr>
+            foreach (var item in Model.hakems)
+            {
+                <tr style="border: groove; ">
+                    <td>
+                        <div class="" style="">
+                            <br />
+
+                            <label>@item.id</label>
+
+                            <br />
+
+
+                        </div>
+                    </td>
+                    <td> @item.ad</td>
+                    <td> @item.mail</td>
+                    <td>@item.tarih</td>
+                </tr>
+            }
+        }
+
+        @if (Model.yazars != null)
+        {
+            <tr>
+                <td style=" height: 80px; text-align: center; font-size: xx-large; font-family: cursive; font-weight: bolder;" colspan="5">YAZAR</td>
+            </tr>
+            <tr style="border: groove; ">
+                <td>İD</td>
+                <td>AD</td>
+                <td>MAİL</td>
+                <td>KAYİT</td>
+
+            </tr>
+            foreach (var item in Model.yazars)
+            {
+                <tr style="border: groove; ">
+                    <td>
+                        <div class="" style="">
+                            <br />
+
+                            <label>İD:1</label>
+
+                            <br />
+
+
+                        </div>
+                    </td>
+                    <td> @item.ad</td>
+                    <td> @item.mail</td>
+                    <td>@item.kayit</td>
+                </tr>
+            }
+        }
+    </table>
+</div>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="622ad68cff50401bb55bee2bc45e38d7" Name="Diagram1" ZoomLevel="88">
+        <EntityTypeShape EntityType="MakaleModel.Editör" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MakaleModel.Hakem" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MakaleModel.Makale" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MakaleModel.Makaleİslem" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="MakaleModel.Revizyon" Width="1.5" PointX="2.75" PointY="5.75" />
+        <EntityTypeShape EntityType="MakaleModel.sysdiagrams" Width="1.5" PointX="4.75" PointY="5.75" />
+        <EntityTypeShape EntityType="MakaleModel.Yazar" Width="1.5" PointX="6.75" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,85 @@
+﻿
+
+@{
+    ViewBag.Title = "atama";
+    Layout = "~/Views/Layout/Layout.cshtml";
+}
+
+<h2>Hakem Seçimleri</h2>
+<hr />
+<div class="input-group">
+    <div class="input-group-prepend">
+
+    </div>
+    <a class="btn btn-info btn-group-lg" href="@ViewBag.Yol" target="_blank">Pdf'e Git</a>
+</div>
+<hr />
+
+<form method="post" action="~/Page/atamayap/@ViewBag.IDatama">
+    @if (ViewBag.hakem1 == 1)
+    {
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">1. HAKEM</label>
+            @Html.DropDownList("hakem1", ViewBag.CategoryList as IEnumerable<SelectListItem>, new { @class = "form-control" })
+            <!--<select class="form-control" id="exampleFormControlSelect1" name="hakem1">-->
+            @*@foreach (var item in Model)
+                {
+                    <option  value="@item.id" >@item.ad</option>
+                }*@
+            <!--</select>-->
+        </div>
+    }   @if (ViewBag.hakem2 ==1)
+    {
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">2. HAKEM</label>
+            @Html.DropDownList("hakem2", ViewBag.CategoryList as IEnumerable<SelectListItem>, new { @class = "form-control" })
+            @*<select class="form-control" id="exampleFormControlSelect1" name="hakem2">
+                    @foreach (var item in Model)
+                    {
+                        <option id="">@item.ad</option>
+                    }
+                </select>*@
+        </div>}
+    @if (ViewBag.hakem3 == 1)
+    {
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">3. HAKEM</label>
+            @Html.DropDownList("hakem3", ViewBag.CategoryList as IEnumerable<SelectListItem>, new { @class = "form-control", required = "required" })
+        </div>
+    }
+    <input id="sbmtbtn" onclick="return show()" type="submit" class="btn btn-outline-success btn-lg" name="name" value="Gönder" />
+
+    <script>
+        var h1 = document.getElementById("hakem1");
+
+        var h2 = document.getElementById("hakem2");
+        var h3 = document.getElementById("hakem3");
+        function show() {
+            var h1as = -1; var h2as = -2;var h3as = -3;
+            if (document.getElementById('hakem1') != null) { h1as = document.getElementById('hakem1').value; }
+            if (document.getElementById('hakem2') != null) { h2as = document.getElementById('hakem2').value;}
+            if (document.getElementById('hakem3') != null) { h3as = document.getElementById('hakem3').value; }
+          
+           
+     
+         
+
+            if (h1as != 0 && h2as != 0 && h3as != 0) {
+                if (h1as != h2as && h1as != h3as && h2as != h3as) {
+                      return true;
+                }
+                else {  return false; }
+
+            }
+            else { return false; }
+            
+        }
+
+    </script>
+    <script>
+        var url_string = window.location.href
+        var url = new URL(url_string);
+        var c = url.searchParams.get("ayni");
+        if (c == "true") { alert("Bu hakem bulunmakta Lütfen Başka bir hakem seçiniz."); }
+    </script>
+</form>
