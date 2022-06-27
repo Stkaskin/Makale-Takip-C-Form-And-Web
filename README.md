@@ -1,6 +1,14 @@
 # Makale-Takip-C--Form-And-Web
 Makale takip sistemi yaz projesi kapsamında proje bazlı olarak yapılmıştır. C# Form OOP ve C# Web Mvc OOP kullanılmıştır.
 
+Referans alınan proje istekleri.
+
+[PandemiDönemi_StajProjesi.pdf](https://github.com/Stkaskin/Makale-Takip-C--Form-And-Web/files/8992302/PandemiDonemi_StajProjesi.pdf)
+
+Özel onaylama numaraları.
+
+[webvemasaüstüonaykodlarıveanlamlari.xlsx](https://github.com/Stkaskin/Makale-Takip-C--Form-And-Web/files/8992311/webvemasaustuonaykodlariveanlamlari.xlsx)
+
 
 ![image](https://user-images.githubusercontent.com/90522945/175949930-cd15e246-d3fc-4d4b-abd7-f067df7b8235.png)
 
